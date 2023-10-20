@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model banner {
+  banner_id Int     @id @default(autoincrement())
+  LINK      String? @db.VarChar(500)
+}
+
+model gallery {
+  img_id Int     @id @default(autoincrement())
+  link   String? @db.VarChar(500)
+}
+
+model highlight {
+  highlight_id Int     @id @default(autoincrement())
+  LINK         String? @db.VarChar(500)
+}
+
+model showcase {
+  showcase_id Int     @id @default(autoincrement())
+  link        String? @db.VarChar(500)
+}
+
+model avatar {
+  avatar_id Int     @id @default(autoincrement())
+  LINK      String? @db.VarChar(500)
+}
+
+model fading_img {
+  fading_id Int     @id @default(autoincrement())
+  link      String? @db.VarChar(500)
+}
